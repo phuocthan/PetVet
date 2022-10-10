@@ -59,7 +59,7 @@
 	{ "name": "con_nguoi", "parent": "mat_chop4", "length": 26.24, "rotation": -112.67, "x": -31.94, "y": 5.75 },
 	{ "name": "no2", "parent": "no", "length": 22.33, "rotation": 175.69, "x": -24.64, "y": 10.96 },
 	{
-		"name": "nhip_nho_gai_2",
+		"name": "gai_2",
 		"parent": "body2",
 		"length": 71.7,
 		"rotation": 46.56,
@@ -68,7 +68,7 @@
 		"color": "35ff00ff"
 	},
 	{
-		"name": "nhip_nho_gai_1",
+		"name": "gai_1",
 		"parent": "body",
 		"length": 69.38,
 		"rotation": -77.14,
@@ -77,7 +77,7 @@
 		"color": "35ff00ff"
 	},
 	{
-		"name": "chuom_vet_thuong",
+		"name": "u_1",
 		"parent": "dau",
 		"length": 54.52,
 		"rotation": -4.17,
@@ -95,7 +95,7 @@
 		"color": "35ff00ff"
 	},
 	{
-		"name": "thuot_boi_1",
+		"name": "xuoc_1",
 		"parent": "dau",
 		"length": 71.71,
 		"rotation": -93.3,
@@ -104,7 +104,7 @@
 		"color": "35ff00ff"
 	},
 	{
-		"name": "thuot_boi_2",
+		"name": "xuoc_2",
 		"parent": "chan_trc1",
 		"length": 52.34,
 		"rotation": 69.55,
@@ -113,7 +113,7 @@
 		"color": "35ff00ff"
 	},
 	{
-		"name": "thuc_an",
+		"name": "an_2",
 		"parent": "body",
 		"length": 104.58,
 		"rotation": 13.27,
@@ -122,7 +122,7 @@
 		"color": "35ff00ff"
 	},
 	{
-		"name": "khan_lau_mieng",
+		"name": "mieng",
 		"parent": "dau",
 		"length": 51.54,
 		"rotation": -91.86,

@@ -5,7 +5,6 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class GameController extends ScreenBase {
 
-
     public static _inst: GameController = null;
 
     onLoad() {

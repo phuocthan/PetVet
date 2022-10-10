@@ -1,0 +1,25 @@
+{
+    "CharacterPrefab": "MEO",
+    "Rooms": [
+        {
+            "name": "PhongSoCuu",
+            "Quests": [
+                "gai_1"
+            ],
+            "Items": [
+                "NHIP",
+                "THUOC_BOI",
+                "CHUOM_DA"
+            ]
+        },
+        {
+            "name": "PhongAn",
+            "Quests": [
+                "an_tao"
+            ],
+            "Items": [
+                "TAO"
+            ]
+        }
+    ]
+}
