@@ -3,13 +3,11 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class AssetManager extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
+    @property(cc.JsonAsset)
+    pets: cc.JsonAsset = null;
 
-    @property
-    text: string = 'hello';
-
-    // LIFE-CYCLE CALLBACKS:
+    @property([cc.JsonAsset])
+    levels: cc.JsonAsset[] = [];
 
     // onLoad () {}
 

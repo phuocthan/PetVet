@@ -1,0 +1,21 @@
+{
+    "types": [
+        { 
+            "name": "MEO",
+            "id": "P1",
+            "animations": {
+                "idle": [
+                    "idle"
+                ],
+                "fun": [ 
+                    "func_1",
+                    "func_2",
+                    "func_3"
+                 ],
+                 "eat": [
+                    "eat"
+                 ]
+            }
+        }
+    ]
+}

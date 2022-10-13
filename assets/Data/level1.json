@@ -1,5 +1,5 @@
 {
-    "CharacterPrefab": "MEO",
+    "PetPrefab": "MEO",
     "Rooms": [
         {
             "name": "PhongSoCuu",
