@@ -19,7 +19,7 @@ export default class LevelSelectionManager extends ScreenBase {
 
     onClickLevelItem(event, customEventData) {
         const levelSelection = parseInt(customEventData);
-        GameController._inst.currLevel = levelSelection;
-        ScreenManager._inst.gotoGameplay();
+        GameController._inst.curLevel = levelSelection;
+        ScreenManager._inst.gotoGamePlay();
     }
 }

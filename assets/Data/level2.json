@@ -1,24 +1,24 @@
 {
-    "PetPrefab": "MEO",
-    "Rooms": [
+    "petId": "DOG_1",
+    "rooms": [
         {
-            "name": "PhongSoCuu",
-            "Quests": [
-                "gai_1"
+            "type": "EMERGENCY",
+            "quests": [
+                "THORN"
             ],
-            "Items": [
-                "NHIP",
-                "THUOC_BOI",
-                "CHUOM_DA"
+            "items": [
+                "TWEEZERS",
+                "TOPICAL",
+                "ICE_BAG"
             ]
         },
         {
-            "name": "PhongAn",
-            "Quests": [
-                "an_tao"
+            "type": "DINING",
+            "quests": [
+                "EAT_APPLE"
             ],
-            "Items": [
-                "TAO"
+            "items": [
+                "APPLE"
             ]
         }
     ]

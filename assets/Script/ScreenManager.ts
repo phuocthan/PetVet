@@ -60,7 +60,7 @@ export default class ScreenManager extends cc.Component {
         this.showScreen(SCREEN_ID.LEVEL_SELECTION);
     }
 
-    gotoGameplay() {
+    gotoGamePlay() {
         this.showScreen(SCREEN_ID.GAMEPLAY);
     }
 
