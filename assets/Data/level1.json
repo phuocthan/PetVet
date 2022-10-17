@@ -3,10 +3,8 @@
     "Rooms": [
         {
             "name": "PhongSoCuu",
-            "Quests": [
-                "gai_1"
-            ],
-            "Items": [
+            "selectionType": "Sequence",
+            "items": [
                 "NHIP",
                 "THUOC_BOI",
                 "CHUOM_DA"
@@ -14,11 +12,42 @@
         },
         {
             "name": "PhongAn",
-            "Quests": [
-                "an_tao"
-            ],
-            "Items": [
-                "TAO"
+            "selectionType": "Semi-Sequence",
+            "items": [
+                "GA_NUONG",
+                "TRUNG_OP_LA",
+                "BONG_CAI_XANH",
+                "GA_KFC",
+                "HOT_DOG",
+                "HAMBURGER",
+                "CAROT"
+            ]
+        },
+        {
+            "name": "PhongChoi",
+            "selectionType": "Freestyle",
+            "items": [
+                "VONG_NHUA",
+                "BANH_NHIEU_MAU",
+                "BANH_TENIS",
+                "BONG_BAY",
+                "CAU_MAY",
+                "VAN_TRUOT",
+                "CUC_XUONG",
+                "MU_DOI"
+            ]
+        },
+        {
+            "name": "PhongChoi",
+            "selectionType": "Sequence",
+            "items": [
+                "MAY_THOI_BUI",
+                "BAN_CHAI_LONG",
+                "BAN_CHA",
+                "XA_PHONG",
+                "VOI_SEN",
+                "KHAN_LAU",
+                "MAY_SAY"
             ]
         }
     ]
