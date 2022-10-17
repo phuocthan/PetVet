@@ -3,6 +3,7 @@ import ScreenManager from "./ScreenManager";
 import GameController from './GameController';
 import AssetManager from "./AssetManager";
 import LevelData from './Levels/LevelData';
+import PetController from './Characters/PetController';
 
 const { ccclass, property } = cc._decorator;
 
@@ -12,9 +13,12 @@ export default class GamePlayManager extends ScreenBase {
     show() {
         super.show();
         const curLevel = GameController._inst.curLevel;
-        const levelCfg = AssetManager._inst.getLevelData(curLevel);
+        const rawLevelCfg = AssetManager._inst.getLevelData(curLevel);
+        const levelCfg: LevelData = LevelData.parseFrom(rawLevelCfg);
+        const petCfg = AssetManager._inst.getPetData(levelCfg.petId);
 
-        cc.warn(LevelData.parseFrom(levelCfg));
+        const petCtrl = this.getComponentInChildren(PetController);
+        petCtrl.load(petCfg)
     }
 
     hide() {

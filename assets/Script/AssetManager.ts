@@ -1,3 +1,5 @@
+import PetData from "./Characters/PetData";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass('StorePrefab')
@@ -7,15 +9,6 @@ export class StorePrefab {
 
     @property(cc.Prefab)
     prefab: cc.Prefab = null;
-}
-
-export class PetData {
-    id: string;
-    animations: {
-        idle: string[];
-        fun: string[];
-        eat: string[];
-    };
 }
 
 @ccclass

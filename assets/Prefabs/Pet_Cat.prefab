@@ -28,7 +28,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 8
+      "__id__": 6
     },
     "_opacity": 255,
     "_color": {
@@ -52,15 +52,15 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        294.518,
-        74.878,
+        0,
+        -323.823,
         0,
         0,
         0,
         0,
         1,
-        1,
-        1,
+        0.8,
+        0.8,
         1
       ]
     },
@@ -157,8 +157,8 @@
     "paused": false,
     "defaultSkin": "default",
     "defaultAnimation": "idle",
-    "_preCacheMode": 1,
-    "_cacheMode": 1,
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
     "loop": true,
     "premultipliedAlpha": false,
     "timeScale": 1,
@@ -175,7 +175,7 @@
     "_N$skeletonData": {
       "__uuid__": "193d8dea-e653-409a-8efa-e1c0a9fc553a"
     },
-    "_N$_defaultCacheMode": 1,
+    "_N$_defaultCacheMode": 0,
     "_N$debugSlots": false,
     "_N$debugBones": false,
     "_N$debugMesh": false,
@@ -205,12 +205,6 @@
     "skeleton": {
       "__id__": 3
     },
-    "animations": {
-      "__id__": 6
-    },
-    "bones": {
-      "__id__": 7
-    },
     "tumorPrefab": {
       "__uuid__": "fa8d1023-a568-444e-a3f3-1aa4221f0d7a"
     },
@@ -221,34 +215,6 @@
       "__uuid__": "6dbb932e-d067-4cd4-b469-727a07a543d4"
     },
     "_id": ""
-  },
-  {
-    "__type__": "PetAnimations",
-    "idle": [
-      "idle"
-    ],
-    "eat": [
-      "eat"
-    ],
-    "fun": [
-      "fun_1",
-      "fun_2",
-      "fun_3"
-    ]
-  },
-  {
-    "__type__": "PetBones",
-    "tumors": [
-      "u_1"
-    ],
-    "thorns": [
-      "gai_1",
-      "gai_2"
-    ],
-    "scratch": [
-      "xuoc_1",
-      "xuoc_2"
-    ]
   },
   {
     "__type__": "cc.PrefabInfo",
