@@ -1,5 +1,6 @@
 import Utils from '../Utils';
 import PetData from './PetData';
+import { AttachBone } from './PetData';
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -33,11 +34,11 @@ export default class PetController extends cc.Component {
         this._spawnHurtPoints(data.hurts.scratch, this.scratchPrefab)
     }
 
-    private _spawnHurtPoints(bones: string[], prefab: cc.Prefab): void {
-        bones.forEach(boneName => {
+    private _spawnHurtPoints(bones: AttachBone[], prefab: cc.Prefab): void {
+        bones.forEach(attachPoint => {
             const nodeU = cc.instantiate(prefab);
-            nodeU.angle = -90;
-            Utils.attachNodeToSpineBone(this.skeleton.node, boneName, nodeU);
+            nodeU.angle = attachPoint?.angle || 0;
+            Utils.attachNodeToSpineBone(this.skeleton.node, attachPoint.bone, nodeU);
         });
     }
 }

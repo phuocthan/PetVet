@@ -4,15 +4,30 @@
             "id": "CAT_1",
             "hurts": {
                 "tumors": [
-                    "u_1"
+                    {
+                        "bone": "u_1",
+                        "angle": -90
+                    }
                 ],
                 "thorns": [
-                    "gai_1",
-                    "gai_2"
+                    {
+                        "bone": "gai_1",
+                        "angle": -90
+                    },
+                    {
+                        "bone": "gai_2",
+                        "angle": -90
+                    }
                 ],
                 "scratch": [
-                    "xuoc_1",
-                    "xuoc_2"
+                    {
+                        "bone": "xuoc_1",
+                        "angle": -90
+                    },
+                    {
+                        "bone": "xuoc_2",
+                        "angle": -90
+                    }
                 ]
             },
             "animations": {

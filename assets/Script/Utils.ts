@@ -15,4 +15,16 @@ export default  class Utils {
             boneNode && boneNode.addChild(mustAddNode);
         }
     }
+
+    public static randomRange(min: number, max: number, int: boolean = false) {
+        const delta = max - min;
+        const rnd = Math.random();
+        let result = min + rnd * delta;
+
+        if (int) {
+            result = Math.round(result);
+        }
+
+        return result;
+    }
 }

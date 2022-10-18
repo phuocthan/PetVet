@@ -1,9 +1,14 @@
+export class AttachBone {
+    bone: string;
+    angle: number;
+}
+
 export default class PetData {
     id: string;
     hurts: {
-        tumors: string[];
-        thorns: string[];
-        scratch: string[];
+        tumors: AttachBone[];
+        thorns: AttachBone[];
+        scratch: AttachBone[];
     };
     animations: {
         idle: string[];
