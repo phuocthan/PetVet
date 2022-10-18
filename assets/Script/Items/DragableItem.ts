@@ -1,4 +1,6 @@
-const {ccclass, property} = cc._decorator;
+import InteractiveObject from "../InteractiveObjects/InteractiveObject";
+
+const { ccclass, property } = cc._decorator;
 
 export enum DragableItemState {
     Idle,
@@ -34,8 +36,9 @@ export default class DragableItem extends cc.Component {
         }, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, (touch: cc.Event.EventTouch) => {
             const position = this.node.position.clone();
-            position.x += touch.getDelta().x;
-            position.y += touch.getDelta().y;
+            const delta = touch.getDelta();
+            position.x += delta.x;
+            position.y += delta.y;
             this.node.setPosition(position);
         }, this);
         this.node.on(cc.Node.EventType.TOUCH_END, (touch: cc.Event.EventTouch) => {
@@ -67,6 +70,6 @@ export default class DragableItem extends cc.Component {
      * @param dt 
      */
     update(dt: number) {
-        
+
     }
 }
