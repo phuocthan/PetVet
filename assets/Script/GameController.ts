@@ -9,6 +9,9 @@ export default class GameController extends ScreenBase {
 
     onLoad() {
         GameController._inst = this;
+        
+        cc.director.getCollisionManager().enabled = true;
+        cc.director.getCollisionManager().enabledDebugDraw = true;
     }
 
     public currZone = -1;
