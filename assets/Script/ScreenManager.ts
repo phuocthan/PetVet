@@ -34,6 +34,7 @@ export default class ScreenManager extends cc.Component {
                 if (s) {
                     if (i === screen) {
                         s.active = true;
+                        s.getComponent(ScreenBase).prepareToShow();
                         s.getComponent(ScreenBase).show();
                     } else {
                         s.getComponent(ScreenBase).hide();

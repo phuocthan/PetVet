@@ -36,13 +36,18 @@ export default class AssetManager extends cc.Component {
         for (let petCfg of configJson.pets) {
             this._petConfigs.set(petCfg.id, petCfg);
         }
-        cc.warn(this._petConfigs);
+        // cc.warn(this._petConfigs);
     }
 
     start() {}
 
     public getLevelData(id: number): any {
         return this.levels[id].json;
+    }
+
+    public getPrefab(key: string): cc.Prefab {
+        const pet = this.petPrefabs.find(x => x.id === key);
+        return pet ? pet.prefab : null;
     }
 
     public getPetData(id: string): PetData {

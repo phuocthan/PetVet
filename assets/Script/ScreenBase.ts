@@ -10,6 +10,10 @@ export enum SCREEN_ID {
 @ccclass
 export default class ScreenBase extends cc.Component {
 
+    prepareToShow() {
+        // do something later
+    }
+
     show() {
         // do something later
     }
