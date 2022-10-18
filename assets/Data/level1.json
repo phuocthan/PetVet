@@ -1,14 +1,24 @@
 {
-    "PetPrefab": "MEO",
-    "Rooms": [
+    "petPrefab": "Pet_Cat",
+    "rooms": [
         {
             "name": "PhongSoCuu",
-            "selectionType": "Sequence",
-            "items": [
-                "NHIP",
-                "THUOC_BOI",
-                "CHUOM_DA"
-            ]
+            "mainQuest": {
+                "selectionType": "Sequence",
+                "items": [
+                    "Tweezers",
+                    "Topical",
+                    "IceBag"
+                ]
+            },
+            "minigame": {
+                "selectionType": "Sequence",
+                "items": [
+                    "Tweezers",
+                    "Topical",
+                    "IceBag"
+                ]
+            }
         },
         {
             "name": "PhongAn",
