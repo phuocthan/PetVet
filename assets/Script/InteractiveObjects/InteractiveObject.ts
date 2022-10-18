@@ -2,6 +2,11 @@ import DragableItem from "../Items/DragableItem";
 
 const {ccclass, property} = cc._decorator;
 
+const InteractiveConfig = {
+    rugTriggerValue: 4.0,
+    rugDelayTime: 200
+}
+
 export enum InteractionType {
     Rug,
     Drag
@@ -16,6 +21,7 @@ export default class InteractiveObject extends cc.Component {
     collider: cc.CircleCollider = null;
 
     protected _lastDragableItemPosition: cc.Vec3 = null;
+    private _delayTime: number = 0;
     /**
      * Start
      */
@@ -30,7 +36,7 @@ export default class InteractiveObject extends cc.Component {
     onCollisionEnter(target: cc.Collider, self: cc.Collider) {
         const dragableItem: DragableItem = target.getComponent(DragableItem);
         if (!dragableItem) return;
-        console.log('on collision enter', dragableItem.itemType);
+        // console.log('on collision enter', dragableItem.itemType);
     }
     /**
      * On Collision Stay
@@ -40,11 +46,20 @@ export default class InteractiveObject extends cc.Component {
     onCollisionStay(target: cc.Collider, self: cc.Collider) {
         const dragableItem: DragableItem = target.getComponent(DragableItem);
         if (!dragableItem) return;
-        console.log('on collision stay', dragableItem.itemType);
-        // if (this.interactionType())
-        const lastPosition = this.lastDragableItemPosition() || dragableItem.node.position;
-        const delta = this.node.position.sub(lastPosition);
-        this.saveLastDragableItemPosition(dragableItem);
+        switch (this.interactionType()) {
+        case InteractionType.Rug: 
+            if (Date.now() - this._delayTime <= InteractiveConfig.rugDelayTime) break;
+            const lastPosition = this.lastDragableItemPosition() || dragableItem.node.position;
+            const delta = dragableItem.node.position.sub(lastPosition);
+            const mag = delta.mag();
+            if (mag >= InteractiveConfig.rugTriggerValue) {
+                console.log("OK");
+                this._delayTime = Date.now();
+            }
+            this.saveLastDragableItemPosition(dragableItem);
+            break;
+        }
+        
     }
     /**
      * Get Last Dragable Item Position
@@ -61,7 +76,7 @@ export default class InteractiveObject extends cc.Component {
      * @param self 
      */
     onCollisionExit(target: cc.Collider, self: cc.Collider) {
-        console.log('on collision exit');
+        // console.log('on collision exit');
     }
     /**
      * Get Interaction Type
