@@ -6,8 +6,8 @@ export class AttachBone {
 export default class PetData {
     id: string;
     hurts: {
-        tumors: AttachBone[];
-        thorns: AttachBone[];
+        tumor: AttachBone[];
+        thorn: AttachBone[];
         scratch: AttachBone[];
     };
     animations: {

@@ -22,9 +22,12 @@ export default class AssetManager extends cc.Component {
     levels: cc.JsonAsset[] = [];
 
     @property([StorePrefab])
-    petPrefabs: StorePrefab[] = [];
+    petPool: StorePrefab[] = [];
 
-    private _petConfigs: Map<string, PetData> = new Map();
+    @property([StorePrefab])
+    itemPool: StorePrefab[] = [];
+
+    private _petDataMap: Map<string, PetData> = new Map();
 
     onLoad() {
         AssetManager._inst = this;
@@ -33,8 +36,8 @@ export default class AssetManager extends cc.Component {
 
     private _parseConfig(): void {
         const configJson = this.config.json;
-        for (let petCfg of configJson.pets) {
-            this._petConfigs.set(petCfg.id, petCfg);
+        for (let el of configJson.pets) {
+            this._petDataMap.set(el.id, el);
         }
         // cc.warn(this._petConfigs);
     }
@@ -46,11 +49,16 @@ export default class AssetManager extends cc.Component {
     }
 
     public getPrefab(key: string): cc.Prefab {
-        const pet = this.petPrefabs.find(x => x.id === key);
-        return pet ? pet.prefab : null;
+        const prefab = this.petPool.find(x => x.id === key);
+        return prefab ? prefab.prefab : null;
+    }
+
+    public getItemPrefab(key: string): cc.Prefab {
+        const prefab = this.itemPool.find(x => x.id === key);
+        return prefab ? prefab.prefab : null;
     }
 
     public getPetData(id: string): PetData {
-        return this._petConfigs.get(id);
+        return this._petDataMap.get(id);
     }
 }

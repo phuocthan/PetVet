@@ -4,7 +4,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass('FrameConfig')
 class FrameConfig {
     @property(cc.SpriteFrame)
-    frame: cc.SpriteFrame;
+    frame: cc.SpriteFrame = null;
 
     @property(cc.Vec2)
     offset: cc.Vec2 = cc.v2(0, 0);

@@ -14,7 +14,6 @@ export default class LevelSelectionManager extends ScreenBase {
 
     hide() {
         super.hide();
-
     }
 
     onClickLevelItem(event, customEventData) {

@@ -1,3 +1,4 @@
+import AssetManager from '../AssetManager';
 import Utils from '../Utils';
 import PetData from './PetData';
 import { AttachBone } from './PetData';
@@ -8,15 +9,6 @@ export default class PetController extends cc.Component {
 
     @property(sp.Skeleton)
     skeleton: sp.Skeleton = null;
-
-    @property(cc.Prefab)
-    tumorPrefab: cc.Prefab = null;
-
-    @property(cc.Prefab)
-    thornPrefab: cc.Prefab = null;
-
-    @property(cc.Prefab)
-    scratchPrefab: cc.Prefab = null;
 
     private _petData: PetData = null;
 
@@ -29,9 +21,11 @@ export default class PetController extends cc.Component {
 
     public load(data: PetData): void {
         this._petData = data;
-        this._spawnHurtPoints(data.hurts.tumors, this.tumorPrefab)
-        this._spawnHurtPoints(data.hurts.thorns, this.thornPrefab)
-        this._spawnHurtPoints(data.hurts.scratch, this.scratchPrefab)
+        for(let type of Object.keys(data.hurts)) {
+            const bones = data.hurts[type];
+            const prefab = AssetManager._inst.getItemPrefab(type);
+            this._spawnHurtPoints(bones, prefab)
+        }
     }
 
     private _spawnHurtPoints(bones: AttachBone[], prefab: cc.Prefab): void {

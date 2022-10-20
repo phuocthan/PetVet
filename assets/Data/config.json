@@ -3,13 +3,13 @@
         {
             "id": "CAT_1",
             "hurts": {
-                "tumors": [
+                "tumor": [
                     {
                         "bone": "u_1",
                         "angle": -90
                     }
                 ],
-                "thorns": [
+                "thorn": [
                     {
                         "bone": "gai_1",
                         "angle": -90
@@ -47,13 +47,13 @@
         {
             "id": "DOG_1",
             "hurts": {
-                "tumors": [
+                "tumor": [
                     {
                         "bone": "u_1",
                         "angle": -90
                     }
                 ],
-                "thorns": [
+                "thorn": [
                     {
                         "bone": "gai_1",
                         "angle": -90
