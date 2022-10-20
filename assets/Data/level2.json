@@ -13,7 +13,7 @@
             ]
         },
         {
-            "type": "DINING",
+            "type": "FOOD",
             "quests": [
                 "EAT_APPLE"
             ],

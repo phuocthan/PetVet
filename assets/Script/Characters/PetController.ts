@@ -2,37 +2,45 @@ import AssetManager from '../AssetManager';
 import Utils from '../Utils';
 import PetData from './PetData';
 import { AttachBone } from './PetData';
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class PetController extends cc.Component {
-
     @property(sp.Skeleton)
     skeleton: sp.Skeleton = null;
 
     private _petData: PetData = null;
+    private _hurtMap: Map<string, cc.Node[]>;
 
-    onLoad () {
+    onLoad() {
+        this._hurtMap = new Map();
     }
 
-    start () {
-
-    }
+    start() {}
 
     public load(data: PetData): void {
         this._petData = data;
-        for(let type of Object.keys(data.hurts)) {
+        for (let type of Object.keys(data.hurts)) {
             const bones = data.hurts[type];
             const prefab = AssetManager._inst.getItemPrefab(type);
-            this._spawnHurtPoints(bones, prefab)
+            this._spawnHurtPoints(type, bones, prefab);
         }
     }
 
-    private _spawnHurtPoints(bones: AttachBone[], prefab: cc.Prefab): void {
-        bones.forEach(attachPoint => {
+    private _spawnHurtPoints(type: string, bones: AttachBone[], prefab: cc.Prefab): void {
+        bones.forEach((attachPoint) => {
             const nodeU = cc.instantiate(prefab);
             nodeU.angle = attachPoint?.angle || 0;
             Utils.attachNodeToSpineBone(this.skeleton.node, attachPoint.bone, nodeU);
+            if (this._hurtMap.has(type)) {
+                this._hurtMap.get(type).push(nodeU);
+            } else {
+                this._hurtMap.set(type, [nodeU]);
+            }
         });
+    }
+
+    public getHurtPoints(type: string): cc.Node[] {
+        return this._hurtMap.get(type);
     }
 }

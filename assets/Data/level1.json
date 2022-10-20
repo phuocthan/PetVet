@@ -3,9 +3,14 @@
     "rooms": [
         {
             "type": "EMERGENCY",
-            "quests": [
-                "THORN"
-            ],
+            "quests": {
+                "type": "SEQUENCE",
+                "list": [
+                    "THORN",
+                    "TUMOR",
+                    "SCRATCH"
+                ]
+            },
             "items": [
                 "TWEEZERS",
                 "TOPICAL",
@@ -13,7 +18,7 @@
             ]
         },
         {
-            "type": "DINING",
+            "type": "FOOD",
             "quests": [
                 "EAT_APPLE"
             ],
