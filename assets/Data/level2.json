@@ -1,5 +1,6 @@
 {
     "petId": "DOG_1",
+    "petState": "IDLE_SAD",
     "rooms": [
         {
             "type": "EMERGENCY",

@@ -27,4 +27,8 @@ export default  class Utils {
 
         return result;
     }
+
+    public static getRandomItem<T>(arr: T[]): T {
+        return arr[this.randomRange(0, arr.length - 1)];
+    }
 }

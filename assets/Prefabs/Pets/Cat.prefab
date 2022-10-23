@@ -104,7 +104,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 529.84,
+      "width": 532.82,
       "height": 603.8
     },
     "_anchorPoint": {
@@ -156,7 +156,7 @@
     ],
     "paused": false,
     "defaultSkin": "default",
-    "defaultAnimation": "idle",
+    "defaultAnimation": "idle_funny",
     "_preCacheMode": 0,
     "_cacheMode": 0,
     "loop": true,
@@ -167,7 +167,7 @@
     "_frameCache": null,
     "_curFrame": null,
     "_skeletonCache": null,
-    "_animationName": "idle",
+    "_animationName": "idle_funny",
     "_animationQueue": [],
     "_headAniInfo": null,
     "_playTimes": 0,
@@ -204,15 +204,6 @@
     "_enabled": true,
     "skeleton": {
       "__id__": 3
-    },
-    "tumorPrefab": {
-      "__uuid__": "fa8d1023-a568-444e-a3f3-1aa4221f0d7a"
-    },
-    "thornPrefab": {
-      "__uuid__": "7b8d8438-242d-4793-ad6e-08f103930bbe"
-    },
-    "scratchPrefab": {
-      "__uuid__": "6dbb932e-d067-4cd4-b469-727a07a543d4"
     },
     "_id": ""
   },

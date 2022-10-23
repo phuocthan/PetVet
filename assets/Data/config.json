@@ -2,37 +2,50 @@
     "pets": [
         {
             "id": "CAT_1",
-            "hurts": {
+            "bones": {
                 "tumor": [
                     {
-                        "bone": "u_1",
+                        "bone": "apply_ice",
                         "angle": -90
                     }
                 ],
                 "thorn": [
                     {
-                        "bone": "gai_1",
+                        "bone": "tweezers_1",
                         "angle": -90
                     },
                     {
-                        "bone": "gai_2",
+                        "bone": "tweezers_2",
                         "angle": -90
                     }
                 ],
                 "scratch": [
                     {
-                        "bone": "xuoc_1",
+                        "bone": "topical",
                         "angle": -90
                     },
                     {
-                        "bone": "xuoc_2",
+                        "bone": "topical_2",
                         "angle": -90
                     }
-                ]
+                ],
+                "plate": {
+                    "bone": "food",
+                    "angle": 0
+                },
+                "tongue": {
+                    "bone": "siro",
+                    "angle": 0
+                },
+                "mouth": {
+                    "bone": "wiper",
+                    "angle": 0
+                }
             },
             "animations": {
                 "idle": [
-                    "idle"
+                    "idle_sad",
+                    "idle_funny"
                 ],
                 "fun": [
                     "fun_1",
@@ -46,37 +59,50 @@
         },
         {
             "id": "DOG_1",
-            "hurts": {
+            "bones": {
                 "tumor": [
                     {
-                        "bone": "u_1",
+                        "bone": "apply_ice",
                         "angle": -90
                     }
                 ],
                 "thorn": [
                     {
-                        "bone": "gai_1",
+                        "bone": "tweezers_1",
                         "angle": -90
                     },
                     {
-                        "bone": "gai_2",
+                        "bone": "tweezers_2",
                         "angle": -90
                     }
                 ],
                 "scratch": [
                     {
-                        "bone": "xuoc_1",
+                        "bone": "topical",
                         "angle": -90
                     },
                     {
-                        "bone": "xuoc_2",
+                        "bone": "topical_2",
                         "angle": -90
                     }
-                ]
+                ],
+                "plate": {
+                    "bone": "food",
+                    "angle": 0
+                },
+                "tongue": {
+                    "bone": "siro",
+                    "angle": 0
+                },
+                "mouth": {
+                    "bone": "wiper",
+                    "angle": 0
+                }
             },
             "animations": {
                 "idle": [
-                    "idle"
+                    "idle_sad",
+                    "idle_funny"
                 ],
                 "fun": [
                     "fun_1",

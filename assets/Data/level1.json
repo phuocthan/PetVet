@@ -3,6 +3,12 @@
     "rooms": [
         {
             "type": "EMERGENCY",
+            "petState": "IDLE_SAD",
+            "items": [
+                "TWEEZERS",
+                "TOPICAL",
+                "ICE_BAG"
+            ],
             "quests": {
                 "type": "SEQUENCE",
                 "list": [
@@ -10,20 +16,25 @@
                     "TUMOR",
                     "SCRATCH"
                 ]
-            },
-            "items": [
-                "TWEEZERS",
-                "TOPICAL",
-                "ICE_BAG"
-            ]
+            }
         },
         {
             "type": "FOOD",
-            "quests": [
-                "EAT_APPLE"
-            ],
+            "petState": "IDLE_FUN",
             "items": [
                 "APPLE"
+            ],
+            "quests": [
+                "EAT_APPLE"
+            ]
+        },
+        {
+            "type": "PLAY",
+            "items": [
+                "APPLE"
+            ],
+            "quests": [
+                "EAT_APPLE"
             ]
         }
     ]

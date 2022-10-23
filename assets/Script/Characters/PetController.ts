@@ -1,7 +1,7 @@
 import AssetManager from '../AssetManager';
 import Utils from '../Utils';
-import PetData from './PetData';
-import { AttachBone } from './PetData';
+import PetData, { AttachBone } from './PetData';
+import { PetState } from './PetData';
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -9,7 +9,8 @@ export default class PetController extends cc.Component {
     @property(sp.Skeleton)
     skeleton: sp.Skeleton = null;
 
-    private _petData: PetData = null;
+    private _state: PetState;
+    private _data: PetData = null;
     private _hurtMap: Map<string, cc.Node[]>;
 
     onLoad() {
@@ -19,12 +20,15 @@ export default class PetController extends cc.Component {
     start() {}
 
     public load(data: PetData): void {
-        this._petData = data;
-        for (let type of Object.keys(data.hurts)) {
-            const bones = data.hurts[type];
+        this._data = data;
+        for (let type of Object.keys(data.bones)) {
             const prefab = AssetManager._inst.getItemPrefab(type);
-            this._spawnHurtPoints(type, bones, prefab);
+            if (prefab) {
+                const bones = data.bones[type];
+                this._spawnHurtPoints(type, bones, prefab);
+            }
         }
+        this.skeleton.setAnimation(0, this._getAnim(), true);
     }
 
     private _spawnHurtPoints(type: string, bones: AttachBone[], prefab: cc.Prefab): void {
@@ -42,5 +46,26 @@ export default class PetController extends cc.Component {
 
     public getHurtPoints(type: string): cc.Node[] {
         return this._hurtMap.get(type);
+    }
+
+    private _getAnim(): string {
+        switch (this._state) {
+            case 'IDLE_SAD':
+                return this._data.animations.idle[0];
+            case 'IDLE_FUN':
+                return this._data.animations.idle[1];
+            case 'FUN':
+                return Utils.getRandomItem(this._data.animations.fun);
+            case 'EAT':
+                return Utils.getRandomItem(this._data.animations.eat);
+        }
+    }
+
+    public get State(): PetState {
+        return this._state;
+    }
+
+    public set State(value: PetState) {
+        this._state = value;
     }
 }
