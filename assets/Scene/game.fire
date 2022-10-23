@@ -315,7 +315,7 @@
   },
   {
     "__type__": "StorePrefab",
-    "id": "DOG-1",
+    "id": "DOG_1",
     "prefab": {
       "__uuid__": "d12e81a7-2190-4a7e-a6d5-9aeb37e6b295"
     }
@@ -5458,7 +5458,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 529.84,
+      "width": 532.82,
       "height": 603.8
     },
     "_anchorPoint": {
@@ -5510,7 +5510,7 @@
     ],
     "paused": false,
     "defaultSkin": "default",
-    "defaultAnimation": "idle",
+    "defaultAnimation": "",
     "_preCacheMode": 1,
     "_cacheMode": 1,
     "loop": true,

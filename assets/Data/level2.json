@@ -1,12 +1,10 @@
 {
     "petId": "DOG_1",
-    "petState": "IDLE_SAD",
     "rooms": [
         {
-            "type": "EMERGENCY",
-            "quests": [
-                "THORN"
-            ],
+            "type": "MEDICAL",
+            "petState": "IDLE_SAD",
+            "questType": "SEQUENCE",
             "items": [
                 "TWEEZERS",
                 "TOPICAL",
@@ -15,11 +13,45 @@
         },
         {
             "type": "FOOD",
-            "quests": [
-                "EAT_APPLE"
-            ],
+            "petState": "IDLE_FUN",
+            "questType": "SEQUENCE",
             "items": [
-                "APPLE"
+                "BAKED_CHICKEN",
+                "FIRED_EGG",
+                "BROCCOLI",
+                "KFC_CHICKEN",
+                "HOT_DOG",
+                "HAMBURGER",
+                "CARROT"
+            ]
+        },
+        {
+            "type": "GAME",
+            "petState": "IDLE_FUN",
+            "questType": "FREE",
+            "items": [
+                "SWIMMING_FLOAT",
+                "BEACH_BALL",
+                "TENNIS_BALL",
+                "BALLOON",
+                "SEPAKTAKRAW",
+                "SKATEBOARD",
+                "BONE_DOG",
+                "HAT"
+            ]
+        },
+        {
+            "type": "BATH",
+            "petState": "IDLE_SAD",
+            "questType": "SEQUENCE",
+            "items": [
+                "DUST_BLOWER",
+                "HAIRBRUSH",
+                "SCRUBBING_BRUSH",
+                "SOAP",
+                "SHOWER",
+                "WIPE",
+                "BLOW_DRYER"
             ]
         }
     ]
