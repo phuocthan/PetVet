@@ -1,9 +1,10 @@
+export type UseItemType = 'SEQUENCE' | 'FREE';
 
 export class RoomData {
     type: string;
     petState: string;
-    quests: string[];
     items: string[];
+    useType: UseItemType;
 }
 
 export default class LevelData {

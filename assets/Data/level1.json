@@ -4,17 +4,16 @@
         {
             "type": "MEDICAL",
             "petState": "IDLE_SAD",
-            "questType": "SEQUENCE",
             "items": [
                 "TWEEZERS",
                 "TOPICAL",
                 "ICE_BAG"
-            ]
+            ],
+            "useType": "SEQUENCE"
         },
         {
             "type": "FOOD",
             "petState": "IDLE_FUN",
-            "questType": "SEQUENCE",
             "items": [
                 "BAKED_CHICKEN",
                 "FIRED_EGG",
@@ -23,12 +22,12 @@
                 "HOT_DOG",
                 "HAMBURGER",
                 "CARROT"
-            ]
+            ],
+            "useType": "SEQUENCE"
         },
         {
             "type": "GAME",
             "petState": "IDLE_FUN",
-            "questType": "FREE",
             "items": [
                 "SWIMMING_FLOAT",
                 "BEACH_BALL",
@@ -38,12 +37,12 @@
                 "SKATEBOARD",
                 "BONE_DOG",
                 "HAT"
-            ]
+            ],
+            "useType": "FREE"
         },
         {
             "type": "BATH",
             "petState": "IDLE_SAD",
-            "questType": "SEQUENCE",
             "items": [
                 "DUST_BLOWER",
                 "HAIRBRUSH",
@@ -52,7 +51,8 @@
                 "SHOWER",
                 "WIPE",
                 "BLOW_DRYER"
-            ]
+            ],
+            "useType": "SEQUENCE"
         }
     ]
 }

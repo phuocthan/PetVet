@@ -2,7 +2,7 @@ import InteractiveObject from "../InteractiveObjects/InteractiveObject";
 
 const { ccclass, property } = cc._decorator;
 
-export enum DragableItemState {
+export enum DraggableItemState {
     Idle,
     Inactive,
     Holding,
@@ -18,7 +18,7 @@ export default class DragableItem extends cc.Component {
     @property()
     itemType: string = "";
 
-    public _currentState: DragableItemState = DragableItemState.Inactive;
+    public _currentState: DraggableItemState = DraggableItemState.Inactive;
 
     protected _originalPosition: cc.Vec3 = null;
     /**
@@ -32,7 +32,7 @@ export default class DragableItem extends cc.Component {
      */
     start() {
         this.node.on(cc.Node.EventType.TOUCH_START, (touch: cc.Event.EventTouch) => {
-            this.setState(DragableItemState.Holding);
+            this.setState(DraggableItemState.Holding);
         }, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, (touch: cc.Event.EventTouch) => {
             const position = this.node.position.clone();
@@ -42,7 +42,7 @@ export default class DragableItem extends cc.Component {
             this.node.setPosition(position);
         }, this);
         this.node.on(cc.Node.EventType.TOUCH_END, (touch: cc.Event.EventTouch) => {
-            this.setState(DragableItemState.Idle);
+            this.setState(DraggableItemState.Idle);
             this.restoreOriginalPosition();
         }, this);
     }
@@ -62,7 +62,7 @@ export default class DragableItem extends cc.Component {
      * Set state of current dragable item
      * @param state 
      */
-    setState(state: DragableItemState) {
+    setState(state: DraggableItemState) {
         this._currentState = state;
     }
     /**
