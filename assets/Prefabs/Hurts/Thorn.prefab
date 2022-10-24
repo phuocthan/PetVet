@@ -255,15 +255,15 @@
     "_id": ""
   },
   {
-    "__type__": "c9779vFRSNAyIo1HuVGezfG",
+    "__type__": "4cdf4sM9P5LA7aJdUCPyQj6",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "collider": null,
-    "kemSprites": [],
+    "interactionType": 1,
+    "targetItemType": "TWEEZERS",
     "_id": ""
   },
   {

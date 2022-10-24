@@ -22,16 +22,16 @@ export default class PetController extends cc.Component {
     public load(data: PetData): void {
         this._data = data;
         for (let type of Object.keys(data.bones)) {
-            const prefab = AssetManager._inst.getItemPrefab(type);
+            const prefab = AssetManager._inst.getItemPrefab(type.toUpperCase());
             if (prefab) {
                 const bones = data.bones[type];
-                this._spawnHurtPoints(type, bones, prefab);
+                this._spawnAttachNode(type, bones, prefab);
             }
         }
         this.skeleton.setAnimation(0, this._getAnim(), true);
     }
 
-    private _spawnHurtPoints(type: string, bones: AttachBone[], prefab: cc.Prefab): void {
+    private _spawnAttachNode(type: string, bones: AttachBone[], prefab: cc.Prefab): void {
         bones.forEach((attachPoint) => {
             const nodeU = cc.instantiate(prefab);
             nodeU.angle = attachPoint?.angle || 0;

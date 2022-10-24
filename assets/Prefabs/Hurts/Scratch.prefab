@@ -234,20 +234,6 @@
     }
   },
   {
-    "__type__": "c9779vFRSNAyIo1HuVGezfG",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "collider": {
-      "__id__": 9
-    },
-    "kemSprites": [],
-    "_id": ""
-  },
-  {
     "__type__": "cc.CircleCollider",
     "_name": "",
     "_objFlags": 0,
@@ -262,6 +248,18 @@
       "y": 0
     },
     "_radius": 12,
+    "_id": ""
+  },
+  {
+    "__type__": "4cdf4sM9P5LA7aJdUCPyQj6",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "interactionType": 0,
+    "targetItemType": "TOPICAL",
     "_id": ""
   },
   {

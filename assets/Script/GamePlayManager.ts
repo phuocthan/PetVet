@@ -7,11 +7,16 @@ import PetController from './Characters/PetController';
 import PetData from './Characters/PetData';
 import { PetState } from './Characters/PetData';
 import { RoomData } from './Levels/LevelData';
+import ItemBoard from './Objects/ItemBoard';
 
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class GamePlayManager extends ScreenBase {
+
+    @property(ItemBoard)
+    private itemBoard: ItemBoard = null;
+
     private _spawnPos: cc.Vec2 = null;
     private _petController: PetController = null;
     private _levelData: LevelData = null;
@@ -63,6 +68,6 @@ export default class GamePlayManager extends ScreenBase {
         // load items
         const items = roomData.items;
         const useItemType = roomData.useType;
-        cc.warn(items, useItemType);
+        this.itemBoard.loadItems(items);
     }
 }

@@ -28,10 +28,13 @@
       },
       {
         "__id__": 8
+      },
+      {
+        "__id__": 9
       }
     ],
     "_prefab": {
-      "__id__": 9
+      "__id__": 10
     },
     "_opacity": 255,
     "_color": {
@@ -245,6 +248,18 @@
       "y": 3
     },
     "_radius": 16,
+    "_id": ""
+  },
+  {
+    "__type__": "4cdf4sM9P5LA7aJdUCPyQj6",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "interactionType": 1,
+    "targetItemType": "ICE_BAG",
     "_id": ""
   },
   {
