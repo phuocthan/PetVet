@@ -331,21 +331,21 @@
   },
   {
     "__type__": "StorePrefab",
-    "id": "THORN",
+    "id": "TWEEZERS_T",
     "prefab": {
       "__uuid__": "7b8d8438-242d-4793-ad6e-08f103930bbe"
     }
   },
   {
     "__type__": "StorePrefab",
-    "id": "TUMOR",
+    "id": "ICE_BAG_T",
     "prefab": {
       "__uuid__": "fa8d1023-a568-444e-a3f3-1aa4221f0d7a"
     }
   },
   {
     "__type__": "StorePrefab",
-    "id": "SCRATCH",
+    "id": "TOPICAL_T",
     "prefab": {
       "__uuid__": "6dbb932e-d067-4cd4-b469-727a07a543d4"
     }

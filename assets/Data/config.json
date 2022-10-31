@@ -3,42 +3,36 @@
         {
             "id": "CAT_1",
             "bones": {
-                "tumor": [
-                    {
-                        "bone": "apply_ice",
-                        "angle": -90
-                    }
-                ],
-                "thorn": [
-                    {
-                        "bone": "tweezers_1",
-                        "angle": -90
-                    },
-                    {
-                        "bone": "tweezers_2",
-                        "angle": -90
-                    }
-                ],
-                "scratch": [
-                    {
-                        "bone": "topical",
-                        "angle": -90
-                    },
-                    {
-                        "bone": "topical_2",
-                        "angle": -90
-                    }
-                ],
-                "plate": {
-                    "bone": "food",
+                "apply_ice": {
+                    "type": "ICE_BAG",
+                    "angle": -90
+                },
+                "tweezers_1": {
+                    "type": "TWEEZERS",
+                    "angle": -90
+                },
+                "tweezers_2": {
+                    "type": "TWEEZERS",
+                    "angle": -90
+                },
+                "topical": {
+                    "type": "TOPICAL",
+                    "angle": -90
+                },
+                "topical_2": {
+                    "type": "TOPICAL",
+                    "angle": -90
+                },
+                "food": {
+                    "type": "PLATE",
                     "angle": 0
                 },
-                "tongue": {
-                    "bone": "siro",
+                "siro": {
+                    "type": "TONGUE",
                     "angle": 0
                 },
-                "mouth": {
-                    "bone": "wiper",
+                "wiper": {
+                    "type": "MOUTH",
                     "angle": 0
                 }
             },
@@ -60,42 +54,36 @@
         {
             "id": "DOG_1",
             "bones": {
-                "tumor": [
-                    {
-                        "bone": "apply_ice",
-                        "angle": -90
-                    }
-                ],
-                "thorn": [
-                    {
-                        "bone": "tweezers_1",
-                        "angle": -90
-                    },
-                    {
-                        "bone": "tweezers_2",
-                        "angle": -90
-                    }
-                ],
-                "scratch": [
-                    {
-                        "bone": "topical",
-                        "angle": -90
-                    },
-                    {
-                        "bone": "topical_2",
-                        "angle": -90
-                    }
-                ],
-                "plate": {
-                    "bone": "food",
+                "apply_ice": {
+                    "type": "ICE_BAG",
+                    "angle": -90
+                },
+                "tweezers_1": {
+                    "type": "TWEEZERS",
+                    "angle": -90
+                },
+                "tweezers_2": {
+                    "type": "TWEEZERS",
+                    "angle": -90
+                },
+                "topical": {
+                    "type": "TOPICAL",
+                    "angle": -90
+                },
+                "topical_2": {
+                    "type": "TOPICAL",
+                    "angle": -90
+                },
+                "food": {
+                    "type": "PLATE",
                     "angle": 0
                 },
-                "tongue": {
-                    "bone": "siro",
+                "siro": {
+                    "type": "TONGUE",
                     "angle": 0
                 },
-                "mouth": {
-                    "bone": "wiper",
+                "wiper": {
+                    "type": "MOUTH",
                     "angle": 0
                 }
             },

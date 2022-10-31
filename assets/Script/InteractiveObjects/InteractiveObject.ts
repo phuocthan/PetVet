@@ -25,7 +25,6 @@ export default class InteractiveObject extends cc.Component {
      * Start
      */
     start() {
-        
     }
 
     /**
@@ -50,17 +49,21 @@ export default class InteractiveObject extends cc.Component {
         if (!hitItem) return;
         if (!this.isValidTarget(hitItem.itemType)) return;
         switch (this.interactionType) {
-        case InteractionType.Rug: 
-            if (Date.now() - this._delayTime <= InteractiveConfig.rugDelayTime) break;
-            const lastPosition = this.lastDraggableItemPosition() || hitItem.node.position;
-            const delta = hitItem.node.position.sub(lastPosition);
-            const mag = delta.mag();
-            if (mag >= InteractiveConfig.rugTriggerValue) {
-                console.log("OK");
-                this._delayTime = Date.now();
-            }
-            this.saveLastDraggableItemPosition(hitItem);
-            break;
+            case InteractionType.Drag:
+                this.onHitDraggableItem(hitItem);
+                break;
+            case InteractionType.Rug: 
+                if (Date.now() - this._delayTime <= InteractiveConfig.rugDelayTime) break;
+                const lastPosition = this.lastDraggableItemPosition() || hitItem.node.position;
+                const delta = hitItem.node.position.sub(lastPosition);
+                const mag = delta.mag();
+                if (mag >= InteractiveConfig.rugTriggerValue) {
+                    console.log("OK");
+                    this.onHitDraggableItem(hitItem);
+                    this._delayTime = Date.now();
+                }
+                this.saveLastDraggableItemPosition(hitItem);
+                break;
         }        
     }
 
@@ -94,5 +97,9 @@ export default class InteractiveObject extends cc.Component {
 
     protected isValidTarget(type: string): boolean {
         return true;
+    }
+
+    protected onHitDraggableItem(item: DraggableItem): void {
+        // console.log('on hit draggable item');
     }
 }

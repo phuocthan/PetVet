@@ -1,6 +1,5 @@
-import AssetManager from '../AssetManager';
 import Utils from '../Utils';
-import PetData, { AttachBone } from './PetData';
+import PetData from './PetData';
 import { PetState } from './PetData';
 const { ccclass, property } = cc._decorator;
 
@@ -21,27 +20,7 @@ export default class PetController extends cc.Component {
 
     public load(data: PetData): void {
         this._data = data;
-        for (let type of Object.keys(data.bones)) {
-            const prefab = AssetManager._inst.getItemPrefab(type.toUpperCase());
-            if (prefab) {
-                const bones = data.bones[type];
-                this._spawnAttachNode(type, bones, prefab);
-            }
-        }
         this.skeleton.setAnimation(0, this._getAnim(), true);
-    }
-
-    private _spawnAttachNode(type: string, bones: AttachBone[], prefab: cc.Prefab): void {
-        bones.forEach((attachPoint) => {
-            const nodeU = cc.instantiate(prefab);
-            nodeU.angle = attachPoint?.angle || 0;
-            Utils.attachNodeToSpineBone(this.skeleton.node, attachPoint.bone, nodeU);
-            if (this._hurtMap.has(type)) {
-                this._hurtMap.get(type).push(nodeU);
-            } else {
-                this._hurtMap.set(type, [nodeU]);
-            }
-        });
     }
 
     public getHurtPoints(type: string): cc.Node[] {
@@ -67,5 +46,11 @@ export default class PetController extends cc.Component {
 
     public set State(value: PetState) {
         this._state = value;
+    }
+
+    public playAnimFunny(): void {
+        this.State = 'FUN';
+        this.skeleton.setAnimation(0, Utils.getRandomItem(this._data.animations.fun), true);
+        this.skeleton.addAnimation(0, this._data.animations.idle[1], true);
     }
 }

@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Tumor",
+    "_name": "Tweezer_T",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -110,8 +110,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 32,
-      "height": 56
+      "width": 28,
+      "height": 59
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -122,8 +122,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1.166,
-        1.167,
+        2.462,
+        17.604,
         0,
         0,
         0,
@@ -163,7 +163,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "914ad85f-9798-446f-8131-2a0b19c7af03"
+      "__uuid__": "7ef2db02-e392-4a68-9a42-b8c05cacf2db"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -214,27 +214,27 @@
   {
     "__type__": "FrameConfig",
     "frame": {
-      "__uuid__": "914ad85f-9798-446f-8131-2a0b19c7af03"
+      "__uuid__": "7ef2db02-e392-4a68-9a42-b8c05cacf2db"
     },
     "offset": {
       "__type__": "cc.Vec2",
-      "x": 1.166,
-      "y": 1.167
+      "x": 2.462,
+      "y": 17.604
     }
   },
   {
     "__type__": "FrameConfig",
     "frame": {
-      "__uuid__": "fb3add40-b1cc-41cd-bd5a-e62fe2a8141b"
+      "__uuid__": "ce4b668e-98a1-4a59-9adb-a3d736422b1a"
     },
     "offset": {
       "__type__": "cc.Vec2",
-      "x": -4.898,
-      "y": 4.432
+      "x": -8.772,
+      "y": 17.604
     }
   },
   {
-    "__type__": "cc.CircleCollider",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -245,9 +245,13 @@
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 0
+      "y": 20
     },
-    "_radius": 12,
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 22,
+      "height": 42
+    },
     "_id": ""
   },
   {
@@ -258,8 +262,8 @@
       "__id__": 1
     },
     "_enabled": true,
-    "interactionType": 0,
-    "targetItemType": "TOPICAL",
+    "interactionType": 1,
+    "targetItemType": "TWEEZERS",
     "_id": ""
   },
   {

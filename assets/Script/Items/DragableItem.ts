@@ -19,6 +19,7 @@ export default class DragableItem extends cc.Component {
     itemType: string = "";
 
     public _currentState: DraggableItemState = DraggableItemState.Inactive;
+    public stickToMode: boolean = false;
 
     protected _originalPosition: cc.Vec3 = null;
     /**
@@ -42,6 +43,7 @@ export default class DragableItem extends cc.Component {
             this.node.setPosition(position);
         }, this);
         this.node.on(cc.Node.EventType.TOUCH_END, (touch: cc.Event.EventTouch) => {
+            if(this.stickToMode) return;
             this.setState(DraggableItemState.Idle);
             this.restoreOriginalPosition();
         }, this);

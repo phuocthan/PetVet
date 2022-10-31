@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Tumor",
+    "_name": "IceBag_T",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -247,7 +247,7 @@
       "x": 0,
       "y": 3
     },
-    "_radius": 16,
+    "_radius": 18,
     "_id": ""
   },
   {
