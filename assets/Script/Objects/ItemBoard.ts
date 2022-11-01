@@ -27,4 +27,10 @@ export default class ItemBoard extends cc.Component {
         });
         this._itemIds = ids;
     }
+
+    public clear() {
+        this._itemIds.length = 0;
+        this._items.length = 0;
+        this.slots.forEach(slot => slot.removeAllChildren());
+    }
 }

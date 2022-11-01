@@ -22,9 +22,16 @@
       }
     ],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 5
+      },
+      {
+        "__id__": 6
+      }
+    ],
     "_prefab": {
-      "__id__": 5
+      "__id__": 7
     },
     "_opacity": 255,
     "_color": {
@@ -36,8 +43,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 181,
+      "height": 92
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -100,8 +107,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 165,
-      "height": 116
+      "width": 151,
+      "height": 94
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -153,7 +160,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "31fec26c-d5dd-423e-b4b5-6f2eac9d54eb"
+      "__uuid__": "cf72c925-da9c-4dee-b1be-5a3c7ee71508"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -179,6 +186,34 @@
     },
     "fileId": "eaWXsdwSVEoIkt8H33w3xm",
     "sync": false
+  },
+  {
+    "__type__": "cc.CircleCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": -29,
+      "y": 2.5
+    },
+    "_radius": 40,
+    "_id": ""
+  },
+  {
+    "__type__": "f637b5TL5pFJobzu6ZUgEq5",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "itemType": "BAKED_CHICKEN",
+    "_id": ""
   },
   {
     "__type__": "cc.PrefabInfo",

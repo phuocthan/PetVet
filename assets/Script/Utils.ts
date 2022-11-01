@@ -31,4 +31,15 @@ export default  class Utils {
     public static getRandomItem<T>(arr: T[]): T {
         return arr[this.randomRange(0, arr.length - 1, true)];
     }
+
+    public static waitForSeconds(delayTime: number, context: cc.Component): Promise<void> {
+        return new Promise<void>((resolve) => {
+            context.scheduleOnce(resolve.bind(context), delayTime);
+        });
+    }
+
+    public static getAnimDuration(ske: sp.Skeleton, animName: string): number {
+        const anim: sp.spine.Animation = ske ? ske.findAnimation(animName) : null;
+        return anim ? anim.duration : 0.0;
+    }
 }

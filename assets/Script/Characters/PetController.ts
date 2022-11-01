@@ -20,7 +20,6 @@ export default class PetController extends cc.Component {
 
     public load(data: PetData): void {
         this._data = data;
-        this.skeleton.setAnimation(0, this._getAnim(), true);
     }
 
     public getHurtPoints(type: string): cc.Node[] {
@@ -48,9 +47,17 @@ export default class PetController extends cc.Component {
         this._state = value;
     }
 
-    public playAnimFunny(): void {
+    public updateAnim(): void {
+        this.skeleton.setAnimation(0, this._getAnim(), true);
+    }
+
+    public playAnimFunny(): number {
         this.State = 'FUN';
-        this.skeleton.setAnimation(0, Utils.getRandomItem(this._data.animations.fun), true);
-        this.skeleton.addAnimation(0, this._data.animations.idle[1], true);
+        const animFun = Utils.getRandomItem(this._data.animations.fun);
+        const animIdle = this._data.animations.idle[1];
+        this.skeleton.setAnimation(0, animFun, false);
+        this.skeleton.addAnimation(0, animIdle, true);
+        const animTime = Utils.getAnimDuration(this.skeleton, animFun) + Utils.getAnimDuration(this.skeleton, animIdle);
+        return animTime;
     }
 }

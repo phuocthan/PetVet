@@ -25,6 +25,7 @@ export default class GamePlayManager extends ScreenBase {
     private _targetBones: Map<string, [{ bone: string; angle: number; attachNode: cc.Node }]> = new Map();
     private _roomTargets: Map<string, { itemId: string; targetId: string; finish: boolean }> = new Map();
 
+    private _petData: PetData = null;
     private _curRoomIdx: number = -1;
     private _numberOfTargets: number = 0;
     private _finishedTargets: number = 0;
@@ -39,11 +40,20 @@ export default class GamePlayManager extends ScreenBase {
         super.show();
         const curLevel = GameController._inst.curLevel;
         const rawLevelData = AssetManager._inst.getLevelData(curLevel);
-        const levelData: LevelData = LevelData.parseFrom(rawLevelData);
+        const levelData = LevelData.parseFrom(rawLevelData);
+        this._petData = AssetManager._inst.getPetData(levelData.petId);
+        
+        // spawn pet
+        const petPrefab = AssetManager._inst.getPrefab(levelData.petId);
+        const petNode = cc.instantiate(petPrefab);
+        petNode.setPosition(this._spawnPos);
+        this.node.addChild(petNode);
+        this._petCtrl = petNode.getComponent(PetController);
+        this._petCtrl.load(this._petData);
 
         this._levelData = levelData;
         this._rooms = levelData.rooms;
-        this._loadRooms();
+        this._loadRooms(0);
     }
 
     hide() {
@@ -54,46 +64,54 @@ export default class GamePlayManager extends ScreenBase {
         ScreenManager._inst.gotoLevelSelection();
     }
 
-    private _loadRooms() {
-        this._curRoomIdx = 0;
-        const roomData = this._rooms[this._curRoomIdx];
-        const petId = this._levelData.petId;
-        const petData = AssetManager._inst.getPetData(petId);
-        const petPrefab = AssetManager._inst.getPrefab(petId);
-        const petNode = cc.instantiate(petPrefab);
+    private _loadRooms(roomIdx: number) {
+        this._curRoomIdx = roomIdx;
+        const roomData = this._rooms[roomIdx];
 
-        // spawn pet
-        petNode.setPosition(this._spawnPos);
-        this.node.addChild(petNode);
-        this._petCtrl = petNode.getComponent(PetController);
         this._petCtrl.State = <PetState>roomData.petState;
-        this._petCtrl.load(petData);
+        this._petCtrl.updateAnim();
 
         this._roomTargets.clear();
-        this._loadTargets(this._petCtrl.skeleton.node, petData);
+        this._loadTargets(this._petCtrl.skeleton.node, this._petData);
 
         // load items
         const items = roomData.items;
         const useItemType = roomData.useType;
         this.itemBoard.loadItems(items);
-        petNode.setSiblingIndex(1);
+        this._petCtrl.node.setSiblingIndex(1);
         this._numberOfTargets = 0;
         items.forEach((item) => {
-            this._targetBones.get(item).forEach((target) => {
-                if (target.attachNode) {
-                    target.attachNode.active = true;
-                    const hurtPoint = target.attachNode.getComponent(HurtPoint);
-                    this._numberOfTargets++;
-                    hurtPoint.onFinish = () => {
-                        if (++this._finishedTargets >= this._numberOfTargets) {
-                            cc.warn('End room!');
-                            this._petCtrl.playAnimFunny();
-                        }
-                        cc.warn(`Room state: ${this._finishedTargets}/${this._numberOfTargets}`);
-                    };
-                }
-            });
+            const bones = this._targetBones.get(item);
+            if(bones) {
+                bones.forEach((target) => {
+                    if (target.attachNode) {
+                        target.attachNode.active = true;
+                        const hurtPoint = target.attachNode.getComponent(HurtPoint);
+                        this._numberOfTargets++;
+                        hurtPoint.onFinish = () => {
+                            if (++this._finishedTargets >= this._numberOfTargets) {
+                                cc.warn('End room!');
+                                this._onFinishRoom();
+                            }
+                            cc.warn(`Room state: ${this._finishedTargets}/${this._numberOfTargets}`);
+                        };
+                    }
+                });
+            }
         });
+    }
+
+    private _onFinishRoom(): void {
+        const animTime = this._petCtrl.playAnimFunny();
+        this.scheduleOnce(() => {
+            this.itemBoard.clear();
+            this._targetBones.clear();
+            if(this._curRoomIdx < this._rooms.length - 1) {
+                this._loadRooms(this._curRoomIdx + 1);
+            } else {
+                cc.warn('>>> Back to level selection');
+            }
+        }, animTime * 0.7);
     }
 
     private _loadTargets(animNode: cc.Node, data: PetData): void {
