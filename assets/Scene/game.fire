@@ -400,14 +400,14 @@
     "__type__": "StorePrefab",
     "id": "FIRED_EGG",
     "prefab": {
-      "__uuid__": "06a9c476-5e21-45df-9971-721412a1280f"
+      "__uuid__": "9752d0b0-1f6b-4575-865f-2c4830ebcb48"
     }
   },
   {
     "__type__": "StorePrefab",
     "id": "BROCCOLI",
     "prefab": {
-      "__uuid__": "06a9c476-5e21-45df-9971-721412a1280f"
+      "__uuid__": "6a3b8ca8-a674-4180-bf7c-d14367c5aa73"
     }
   },
   {
