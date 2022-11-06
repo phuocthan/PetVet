@@ -1,4 +1,5 @@
 import AssetManager from '../AssetManager';
+import { TargetData } from '../Levels/LevelData';
 
 const { ccclass, property } = cc._decorator;
 
@@ -10,15 +11,15 @@ export default class ItemBoard extends cc.Component {
     @property([cc.Node])
     slots: cc.Node[] = [];
 
-    private _itemIds: string[];
+    private _itemIds: TargetData[];
     private _items: cc.Node[] = [];
 
     start() {}
 
-    public loadItems(ids: string[]) {
+    public loadItems(ids: TargetData[]) {
         let addSlotIdx = 0;
-        ids.forEach((itemId, idx) => {
-            const itemPrefab = AssetManager._inst.getItemPrefab(itemId);
+        ids.forEach((target, idx) => {
+            const itemPrefab = AssetManager._inst.getItemPrefab(target.item);
             const itemNode = cc.instantiate(itemPrefab);
             this.slots[addSlotIdx].addChild(itemNode);
             itemNode.active = idx < this.displayItems;

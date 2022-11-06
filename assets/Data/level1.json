@@ -1,56 +1,230 @@
 {
     "petId": "CAT_1",
+    "animations": {
+        "idle": [
+            "idle_sad",
+            "idle_funny"
+        ],
+        "fun": [
+            "fun_1",
+            "fun_2",
+            "fun_3"
+        ],
+        "eat": [
+            "eat"
+        ]
+    },
     "rooms": [
         {
             "type": "MEDICAL",
-            "petState": "IDLE_SAD",
-            "items": [
-                "TWEEZERS",
-                "TOPICAL",
-                "ICE_BAG"
+            "state": "IDLE_SAD",
+            "targets": [
+                {
+                    "item": "TWEEZERS",
+                    "bones": [
+                        {
+                            "name": "tweezers_1",
+                            "angle": -90
+                        },
+                        {
+                            "name": "tweezers_2",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "TOPICAL",
+                    "bones": [
+                        {
+                            "name": "topical",
+                            "angle": -90
+                        },
+                        {
+                            "name": "topical_2",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "ICE_BAG",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                }
             ],
             "useType": "SEQUENCE"
         },
         {
             "type": "FOOD",
-            "petState": "IDLE_FUN",
-            "items": [
-                "BAKED_CHICKEN",
-                "FIRED_EGG",
-                "BROCCOLI",
-                "KFC_CHICKEN",
-                "HOT_DOG",
-                "HAMBURGER",
-                "CARROT"
+            "state": "IDLE_FUN",
+            "targets": [
+                {
+                    "item": "BAKED_CHICKEN",
+                    "bones": [
+                        {
+                            "name": "wiper",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "FIRED_EGG",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "BROCCOLI",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "KFC_CHICKEN",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "HOT_DOG",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "HAMBURGER",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "CARROT",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                }
             ],
             "useType": "SEQUENCE"
         },
         {
             "type": "GAME",
-            "petState": "IDLE_FUN",
-            "items": [
-                "SWIMMING_FLOAT",
-                "BEACH_BALL",
-                "TENNIS_BALL",
-                "BALLOON",
-                "SEPAKTAKRAW",
-                "SKATEBOARD",
-                "BONE_DOG",
-                "HAT"
+            "state": "IDLE_FUN",
+            "targets": [
+                {
+                    "item": "SWIMMING_FLOAT"
+                },
+                {
+                    "item": "BEACH_BALL"
+                },
+                {
+                    "item": "TENNIS_BALL"
+                },
+                {
+                    "item": "BALLOON"
+                },
+                {
+                    "item": "SEPAKTAKRAW"
+                },
+                {
+                    "item": "SKATEBOARD"
+                },
+                {
+                    "item": "BONE_DOG"
+                },
+                {
+                    "item": "HAT"
+                }
             ],
             "useType": "FREE"
         },
         {
             "type": "BATH",
-            "petState": "IDLE_SAD",
-            "items": [
-                "DUST_BLOWER",
-                "HAIRBRUSH",
-                "SCRUBBING_BRUSH",
-                "SOAP",
-                "SHOWER",
-                "WIPE",
-                "BLOW_DRYER"
+            "state": "IDLE_SAD",
+            "targets": [
+                {
+                    "item": "DUST_BLOWER",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "HAIRBRUSH",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "SCRUBBING_BRUSH",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "SOAP",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "SHOWER",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "WIPE",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                },
+                {
+                    "item": "BLOW_DRYER",
+                    "bones": [
+                        {
+                            "name": "apply_ice",
+                            "angle": -90
+                        }
+                    ]
+                }
             ],
             "useType": "SEQUENCE"
         }

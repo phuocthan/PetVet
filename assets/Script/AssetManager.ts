@@ -1,5 +1,3 @@
-import PetData from "./Characters/PetData";
-
 const { ccclass, property } = cc._decorator;
 
 @ccclass('StorePrefab')
@@ -15,9 +13,6 @@ export class StorePrefab {
 export default class AssetManager extends cc.Component {
     public static _inst: AssetManager = null;
 
-    @property(cc.JsonAsset)
-    config: cc.JsonAsset = null;
-
     @property([cc.JsonAsset])
     levels: cc.JsonAsset[] = [];
 
@@ -27,19 +22,8 @@ export default class AssetManager extends cc.Component {
     @property([StorePrefab])
     itemPool: StorePrefab[] = [];
 
-    private _petDataMap: Map<string, PetData> = new Map();
-
     onLoad() {
         AssetManager._inst = this;
-        this._parseConfig();
-    }
-
-    private _parseConfig(): void {
-        const configJson = this.config.json;
-        for (let el of configJson.pets) {
-            this._petDataMap.set(el.id, el);
-        }
-        // cc.warn(this._petConfigs);
     }
 
     start() {}
@@ -56,9 +40,5 @@ export default class AssetManager extends cc.Component {
     public getItemPrefab(key: string): cc.Prefab {
         const prefab = this.itemPool.find(x => x.id === key);
         return prefab ? prefab.prefab : null;
-    }
-
-    public getPetData(id: string): PetData {
-        return this._petDataMap.get(id);
     }
 }

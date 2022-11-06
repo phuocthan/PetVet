@@ -1,15 +1,16 @@
+import { AnimationData } from '../Levels/LevelData';
 import Utils from '../Utils';
-import PetData from './PetData';
-import { PetState } from './PetData';
 const { ccclass, property } = cc._decorator;
+
+export type AnimalState = 'IDLE_FUN' | 'IDLE_SAD' | 'FUN' | 'EAT';
 
 @ccclass
 export default class PetController extends cc.Component {
     @property(sp.Skeleton)
     skeleton: sp.Skeleton = null;
 
-    private _state: PetState;
-    private _data: PetData = null;
+    private _state: AnimalState;
+    private _animations: AnimationData = null;
     private _hurtMap: Map<string, cc.Node[]>;
 
     onLoad() {
@@ -18,8 +19,8 @@ export default class PetController extends cc.Component {
 
     start() {}
 
-    public load(data: PetData): void {
-        this._data = data;
+    public loadAnimations(animConfig: AnimationData): void {
+        this._animations = animConfig;
     }
 
     public getHurtPoints(type: string): cc.Node[] {
@@ -29,21 +30,21 @@ export default class PetController extends cc.Component {
     private _getAnim(): string {
         switch (this._state) {
             case 'IDLE_SAD':
-                return this._data.animations.idle[0];
+                return this._animations.idle[0];
             case 'IDLE_FUN':
-                return this._data.animations.idle[1];
+                return this._animations.idle[1];
             case 'FUN':
-                return Utils.getRandomItem(this._data.animations.fun);
+                return Utils.getRandomItem(this._animations.fun);
             case 'EAT':
-                return Utils.getRandomItem(this._data.animations.eat);
+                return Utils.getRandomItem(this._animations.eat);
         }
     }
 
-    public get State(): PetState {
+    public get State(): AnimalState {
         return this._state;
     }
 
-    public set State(value: PetState) {
+    public set State(value: AnimalState) {
         this._state = value;
     }
 
@@ -53,8 +54,8 @@ export default class PetController extends cc.Component {
 
     public playAnimFunny(): number {
         this.State = 'FUN';
-        const animFun = Utils.getRandomItem(this._data.animations.fun);
-        const animIdle = this._data.animations.idle[1];
+        const animFun = Utils.getRandomItem(this._animations.fun);
+        const animIdle = this._animations.idle[1];
         this.skeleton.setAnimation(0, animFun, false);
         this.skeleton.addAnimation(0, animIdle, true);
         const animTime = Utils.getAnimDuration(this.skeleton, animFun) + Utils.getAnimDuration(this.skeleton, animIdle);
